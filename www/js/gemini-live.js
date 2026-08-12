@@ -4,7 +4,10 @@
  * طبقة تحقق (مقارنة نص الـ AI بالسيناريو المتوقع)، ومنطق تصحيح النطق.
  */
 
-const LIVE_MODEL = 'models/gemini-2.5-flash-native-audio-preview-12-2025';
+// ملاحظة: gemini-3.1-flash-live-preview يقبل clientContent فقط لتحميل
+// السياق الأولي (initialHistoryInClientContent). أي رسالة نصية أثناء
+// المحادثة يجب أن تُرسل عبر realtimeInput.text بدلاً من clientContent.
+const LIVE_MODEL = 'models/gemini-3.1-flash-live-preview';
 const INPUT_SAMPLE_RATE = 16000;
 const OUTPUT_SAMPLE_RATE = 24000;
 const MATCH_THRESHOLD = 0.5; // 50%
@@ -376,9 +379,8 @@ class GeminiLiveSession {
 
     this.ws.send(
       JSON.stringify({
-        clientContent: {
-          turns: [{ role: 'user', parts: [{ text: instruction }] }],
-          turnComplete: true,
+        realtimeInput: {
+          text: instruction,
         },
       })
     );

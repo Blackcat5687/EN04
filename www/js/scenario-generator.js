@@ -3,7 +3,7 @@
  * (ليس Live API) — يُستخدم قبل بدء أي جلسة صوتية
  */
 
-const GEMINI_TEXT_MODEL = 'gemini-2.0-flash';
+const GEMINI_TEXT_MODEL = 'gemini-3.6-flash';
 const GEMINI_TEXT_ENDPOINT = (model, apiKey) =>
   `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
 
