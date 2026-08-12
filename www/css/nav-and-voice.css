@@ -1,0 +1,128 @@
+/* nav-and-voice.css — التنقل السفلي ومؤشر حالة الصوت (العنصر المميّز للتطبيق) */
+
+.bottom-nav {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  max-width: 560px;
+  margin: 0 auto;
+  background: var(--bg-elevated);
+  border-top: 1px solid var(--border);
+  display: flex;
+  padding: 8px var(--space-2) calc(8px + env(safe-area-inset-bottom, 0px));
+  z-index: 100;
+}
+
+.nav-btn {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 4px;
+  border-radius: var(--radius-sm);
+  color: var(--text-tertiary);
+  transition: color var(--transition-fast);
+}
+
+.nav-btn .nav-icon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-btn .nav-icon svg {
+  width: 22px;
+  height: 22px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.8;
+}
+
+.nav-btn span {
+  font-size: 11.5px;
+  font-weight: 600;
+}
+
+.nav-btn.active {
+  color: var(--accent);
+}
+
+.nav-btn.active .nav-icon svg {
+  stroke-width: 2.2;
+}
+
+/* ===== مؤشر حالة الصوت — العنصر المميّز (Signature Element) =====
+   نبضة هادئة مبنية على canvas تمثل: استماع / تفكير / كلام / تصحيح */
+
+.voice-orb-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-6) 0 var(--space-4);
+}
+
+.voice-orb-canvas {
+  width: 180px;
+  height: 180px;
+}
+
+.voice-state-label {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  min-height: 20px;
+  text-align: center;
+}
+
+.voice-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  padding-top: var(--space-2);
+}
+
+.mic-btn {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--accent-text-on);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-md);
+  transition: transform var(--transition-fast), background var(--transition-fast);
+}
+.mic-btn:active { transform: scale(0.94); }
+.mic-btn svg { width: 26px; height: 26px; }
+.mic-btn:disabled {
+  background: var(--bg-sunken);
+  color: var(--text-tertiary);
+  box-shadow: none;
+}
+
+.mic-btn.recording {
+  background: var(--danger);
+}
+
+.live-transcript-line {
+  background: var(--bg-sunken);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  margin: 0 var(--space-4);
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.live-transcript-line .en {
+  font-size: 16px;
+  color: var(--text-primary);
+  text-align: center;
+}

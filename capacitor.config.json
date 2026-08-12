@@ -1,0 +1,16 @@
+{
+  "appId": "com.local.englishlive",
+  "appName": "محادثة إنجليزي",
+  "webDir": "www",
+  "android": {
+    "allowMixedContent": false,
+    "captureInput": true
+  },
+  "plugins": {
+    "SplashScreen": {
+      "launchAutoHide": true,
+      "backgroundColor": "#FAF7F2",
+      "showSpinner": false
+    }
+  }
+}

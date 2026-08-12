@@ -1,0 +1,19 @@
+# Node
+node_modules/
+npm-debug.log*
+
+# Capacitor generates this automatically in CI via `npx cap add android`
+# (kept out of git so the workflow always builds it fresh and it doesn't bloat the repo)
+android/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+
+# Build outputs
+*.apk
+*.aab

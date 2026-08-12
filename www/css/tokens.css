@@ -1,0 +1,84 @@
+/* tokens.css — نظام الألوان والتايبوغرافيا الأساسي */
+
+:root {
+  /* ===== الوضع الفاتح (افتراضي) ===== */
+  --bg: #FAF7F2;
+  --bg-elevated: #FFFFFF;
+  --bg-sunken: #F1ECE3;
+  --text-primary: #2B2622;
+  --text-secondary: #6B6156;
+  --text-tertiary: #A69C8E;
+  --border: #E5DDCF;
+  --border-strong: #D3C7B4;
+
+  --accent: #8A6F5C;          /* توب دافئ — لون التمييز الأساسي */
+  --accent-hover: #755D4D;
+  --accent-soft: #EFE6DC;     /* خلفية فاتحة للعناصر المُفعَّلة */
+  --accent-text-on: #FFFFFF;
+
+  --success: #4F7A6B;         /* سج مطفأ — للنطق الصحيح / التعلّم */
+  --success-soft: #E4EEE9;
+  --warning: #B98A3D;
+  --warning-soft: #F5EADA;
+  --danger: #C4463D;          /* أحمر مكتوم — فقط للأخطاء/تحتاج مراجعة */
+  --danger-soft: #F6E4E2;
+
+  --shadow-sm: 0 1px 2px rgba(43, 38, 34, 0.06);
+  --shadow-md: 0 4px 16px rgba(43, 38, 34, 0.08);
+  --shadow-lg: 0 12px 32px rgba(43, 38, 34, 0.12);
+
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 22px;
+  --radius-full: 999px;
+
+  --font-ui: 'IBM Plex Sans Arabic', 'Segoe UI', Tahoma, sans-serif;
+  --font-en: 'IBM Plex Sans', 'Segoe UI', sans-serif;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+
+  --transition-fast: 140ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 220ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[data-theme="dark"] {
+  --bg: #1C1A18;
+  --bg-elevated: #262320;
+  --bg-sunken: #16140F;
+  --text-primary: #EDE8E1;
+  --text-secondary: #B3A99B;
+  --text-tertiary: #756B5E;
+  --border: #362F28;
+  --border-strong: #453C33;
+
+  --accent: #C7A98F;
+  --accent-hover: #D9BFA8;
+  --accent-soft: #332B22;
+  --accent-text-on: #201C17;
+
+  --success: #82B3A0;
+  --success-soft: #223229;
+  --warning: #D9AE68;
+  --warning-soft: #362D1B;
+  --danger: #E08078;
+  --danger-soft: #3A211F;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.24);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.32);
+  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.4);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
