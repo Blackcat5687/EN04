@@ -44,6 +44,18 @@ jobs:
       - name: Sync Capacitor
         run: npx cap sync android
 
+      - name: Add microphone permission
+        run: |
+          MANIFEST="android/app/src/main/AndroidManifest.xml"
+          if ! grep -q "android.permission.RECORD_AUDIO" "$MANIFEST"; then
+            sed -i '0,/<application/s//<uses-permission android:name="android.permission.RECORD_AUDIO" \/>\n\n    <application/' "$MANIFEST"
+          fi
+          if ! grep -q "android.permission.MODIFY_AUDIO_SETTINGS" "$MANIFEST"; then
+            sed -i '0,/<application/s//<uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" \/>\n\n    <application/' "$MANIFEST"
+          fi
+          echo "---- Permissions in manifest ----"
+          grep "uses-permission" "$MANIFEST"
+
       - name: Cache Gradle
         uses: actions/cache@v4
         with:
